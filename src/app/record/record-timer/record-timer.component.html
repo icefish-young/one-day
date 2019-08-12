@@ -1,0 +1,15 @@
+<div class="od-record-time">
+    <div class="od-record-count">{{count}}</div>
+    <div class="od-record-name">
+        <input ibmText placeholder="干点啥呀？"/>
+    </div>
+    <div *ngIf="!started">
+        <button ibmButton="secondary" (click)="complete()">整完了</button>
+        <button ibmButton (click)="start()">开整</button>
+    </div>
+    <div *ngIf="started">
+        <button ibmButton="secondary" (click)="end()">先不整了</button>
+        <button ibmButton *ngIf="!paused" (click)="pause()">歇会儿</button>
+        <button ibmButton *ngIf="paused" (click)="continue()">接着整</button>
+    </div>
+</div>
